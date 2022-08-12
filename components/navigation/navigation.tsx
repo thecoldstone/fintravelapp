@@ -1,4 +1,4 @@
-import { Popover, Transition } from "@headlessui/react";
+import { Popover, Transition, Menu } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
@@ -28,20 +28,59 @@ export default function Navigation() {
               <div className="-mr-2 flex items-center md:hidden">
                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center jsutify-center text-gray-400">
                   <span className="sr-only">Open main menu</span>
-                  <MenuIcon className="h-6 w-6" aria-hidden="true"/>
+                  <MenuIcon className="h-6 w-6" aria-hidden="true" />
                 </Popover.Button>
               </div>
             </div>
           </div>
           <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
             {
-              navigation.map((item) => (
-                <Link href={item.url}>
-                  <a key={item.text} className="font-medium text-gray-500 hover:text-gray-900">
-                    {t(item.text)}
-                  </a>
-                </Link>
-              ))
+              navigation.map((item) => {
+                if (item.navigation) {
+                  return (
+                    <Menu as="a" key={item.text} className="relative inline-block text-left">
+                      <>
+                        <Menu.Button>
+                          {t(item.text)}
+                        </Menu.Button>
+                      </>
+                      <Transition
+                        as={Fragment}
+                        enter="transition ease-out duration-100"
+                        enterFrom="transform opacity-0 scale-95"
+                        enterTo="transform opacity-100 scale-100"
+                        leave="transition ease-in duration-75"
+                        leaveFrom="transform opacity-100 scale-100"
+                        leaveTo="transform opacity-0 scale-95"
+                      >
+                        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none">
+                            {
+                              item.navigation.map((subitem) => {
+                                return (
+                                  <div className="py-1" key={subitem.text}>
+                                    <Menu.Item>
+                                      <Link href={subitem.url}>
+                                        <a className="block px-4 py-2 text-sm">{t(subitem.text)}</a>
+                                      </Link>
+                                    </Menu.Item>
+                                  </div>
+                                )
+                              })
+                            }
+                        </Menu.Items>
+                      </Transition>
+                    </Menu>
+                  )
+                } else {
+                  return (
+                    <Link href={item.url}>
+                      <a key={item.text} className="font-medium text-gray-500 hover:text-gray-900">
+                        {t(item.text)}
+                      </a>
+                    </Link>
+                  )
+                }
+              })
             }
           </div>
         </nav>
@@ -84,8 +123,8 @@ export default function Navigation() {
               {
                 navigation.map((item) => (
                   <Link href={item.url}>
-                    <a 
-                      key={item.text} 
+                    <a
+                      key={item.text}
                       className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                     >
                       {t(item.text)}

@@ -2,7 +2,9 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Lappeeranta() {
     return (
-        <h2>Lappeeranta!</h2>
+        <div>
+            <h2>Lappeeranta!</h2>
+        </div>
     )
 };
 

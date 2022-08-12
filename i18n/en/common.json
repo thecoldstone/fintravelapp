@@ -1,7 +1,10 @@
 {
     "UNDERCONSTRUCTION": "Under construction...",
     "HOME": "Home",
-    "LAPPEERANTA": "Lappeeranta",
+    "LAPPEENRANTA": "Lappeenranta",
+    "TOURTOLAPPEENRANTA": "Tour to Lappeenranta",
+    "ONEHOURTOUR": "One hour tour",
+    "HELSINKI": "Helsinki",
     "SCHEDULE": "Schedule",
     "CONTACTS": "Contacts"
 }
