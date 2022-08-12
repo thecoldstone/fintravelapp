@@ -1,4 +1,4 @@
-import { Popover, Transition, Menu } from "@headlessui/react";
+import { Disclosure, Popover, Transition, Menu } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
@@ -48,6 +48,10 @@ function MenuBtnLink({ item }) {
 export default function Navigation() {
 
   const { t } = useTranslation();
+
+  const onClickMenuButton = (e) => {
+    console.log(e);
+  };
 
   return (
     <Popover>
@@ -105,47 +109,83 @@ export default function Navigation() {
           focus
           className="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
         >
-          <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-            <div className="px-5 pt-4 flex items-center justify-between">
-              <div>
-                <Link href="/">
-                  <a>
-                    <Image
-                      src="/fintravel-logo.svg"
-                      width={100}
-                      height={80}
-                    />
-                  </a>
-                </Link>
+          {({ close }) => (
+            <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+              <div className="px-5 pt-4 flex items-center justify-between">
+                <div>
+                  <Link href="/">
+                    <a>
+                      <Image
+                        src="/fintravel-logo.svg"
+                        width={100}
+                        height={80}
+                      />
+                    </a>
+                  </Link>
+                </div>
+                <div className="-mr-2">
+                  <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <span className="sr-only">Close main menu</span>
+                    <XIcon className="h-6 w-6" aria-hidden="true" />
+                  </Popover.Button>
+                </div>
               </div>
-              <div className="-mr-2">
-                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                  <span className="sr-only">Close main menu</span>
-                  <XIcon className="h-6 w-6" aria-hidden="true" />
-                </Popover.Button>
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                {
+                  navigation.map((item) => {
+                    return item.navigation
+                      ? (
+                        // [TODO] Needs to be done as accordion
+                        <Disclosure>
+                          <Disclosure.Button className="py-2 px-3">
+                            {t(item.text)}
+                          </Disclosure.Button>
+                          <Transition
+                            enter="transition durtation-100 ease-out"
+                            enterFrom="transform scale-95 opacity-0"
+                            enterTo="transform scale-100 opacity-100"
+                            leave="transition duration-75 ease-out"
+                            leaveFrom="transform scale-100 opacity-100"
+                            leaveTo="transform scale-95 opacity-0"
+                          >
+                            <Disclosure.Panel className="bg-gray-200">
+                              <div>
+                                {
+                                  item.navigation.map((subitem) => {
+                                    return (
+                                      <Link key={subitem.text} href={subitem.url}>
+                                        <a 
+                                          className="block px-4 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-300"
+                                          onClick={() => {
+                                            close()
+                                          }}
+                                        >{t(subitem.text)}</a>
+                                      </Link>
+                                    )
+                                  })
+                                }
+                              </div>
+                            </Disclosure.Panel>
+                          </Transition>
+                        </Disclosure>
+                      )
+                      : (
+                        <Link key={item.text} href={item.url}>
+                          <a
+                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                            onClick={() => {
+                              close()
+                            }}
+                          >
+                            {t(item.text)}
+                          </a>
+                        </Link>
+                      )
+                  }
+                  )}
               </div>
             </div>
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {
-                navigation.map((item) => {
-                  return item.navigation
-                    ? (
-                      // [TODO] Needs to be done as accordion
-                      <></>
-                    )
-                    : (
-                      <Link  key={item.text} href={item.url}>
-                        <a
-                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                        >
-                          {t(item.text)}
-                        </a>
-                      </Link>
-                    )
-                }
-                )}
-            </div>
-          </div>
+          )}
         </Popover.Panel>
       </Transition>
     </Popover >
