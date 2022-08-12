@@ -6,6 +6,45 @@ import Link from "next/link";
 import { Fragment } from "react";
 import navigation from "./const";
 
+function MenuBtnLink({ item }) {
+  const { t } = useTranslation();
+
+  return (
+    <Menu as="div" key={item.text} className="relative inline-block text-left">
+      <>
+        <Menu.Button>
+          {t(item.text)}
+        </Menu.Button>
+      </>
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95"
+      >
+        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none">
+          {
+            item.navigation.map((subitem) => {
+              return (
+                <div className="py-1" key={subitem.text}>
+                  <Menu.Item>
+                    <Link href={subitem.url}>
+                      <a className="block px-4 py-2 text-sm">{t(subitem.text)}</a>
+                    </Link>
+                  </Menu.Item>
+                </div>
+              )
+            })
+          }
+        </Menu.Items>
+      </Transition>
+    </Menu>
+  )
+}
+
 export default function Navigation() {
 
   const { t } = useTranslation();
@@ -36,50 +75,17 @@ export default function Navigation() {
           <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
             {
               navigation.map((item) => {
-                if (item.navigation) {
-                  return (
-                    <Menu as="a" key={item.text} className="relative inline-block text-left">
-                      <>
-                        <Menu.Button>
-                          {t(item.text)}
-                        </Menu.Button>
-                      </>
-                      <Transition
-                        as={Fragment}
-                        enter="transition ease-out duration-100"
-                        enterFrom="transform opacity-0 scale-95"
-                        enterTo="transform opacity-100 scale-100"
-                        leave="transition ease-in duration-75"
-                        leaveFrom="transform opacity-100 scale-100"
-                        leaveTo="transform opacity-0 scale-95"
-                      >
-                        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none">
-                            {
-                              item.navigation.map((subitem) => {
-                                return (
-                                  <div className="py-1" key={subitem.text}>
-                                    <Menu.Item>
-                                      <Link href={subitem.url}>
-                                        <a className="block px-4 py-2 text-sm">{t(subitem.text)}</a>
-                                      </Link>
-                                    </Menu.Item>
-                                  </div>
-                                )
-                              })
-                            }
-                        </Menu.Items>
-                      </Transition>
-                    </Menu>
+                return item.navigation
+                  ? (
+                    <MenuBtnLink item={item} key={item.text.toLowerCase()} />
                   )
-                } else {
-                  return (
-                    <Link href={item.url}>
-                      <a key={item.text} className="font-medium text-gray-500 hover:text-gray-900">
+                  : (
+                    <Link key={item.text} href={item.url}>
+                      <a className="font-medium text-gray-500 hover:text-gray-900">
                         {t(item.text)}
                       </a>
                     </Link>
                   )
-                }
               })
             }
           </div>
@@ -121,21 +127,27 @@ export default function Navigation() {
             </div>
             <div className="px-2 pt-2 pb-3 space-y-1">
               {
-                navigation.map((item) => (
-                  <Link href={item.url}>
-                    <a
-                      key={item.text}
-                      className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                    >
-                      {t(item.text)}
-                    </a>
-                  </Link>
-                ))
-              }
+                navigation.map((item) => {
+                  return item.navigation
+                    ? (
+                      // [TODO] Needs to be done as accordion
+                      <></>
+                    )
+                    : (
+                      <Link  key={item.text} href={item.url}>
+                        <a
+                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                        >
+                          {t(item.text)}
+                        </a>
+                      </Link>
+                    )
+                }
+                )}
             </div>
           </div>
         </Popover.Panel>
       </Transition>
-    </Popover>
+    </Popover >
   )
 }
