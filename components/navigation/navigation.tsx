@@ -2,20 +2,29 @@ import { Disclosure, Popover, Transition, Menu } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
+import { forwardRef, Fragment } from "react";
 import Link from "next/link";
-import { Fragment } from "react";
 import navigation from "./const";
+
+const MyLink = forwardRef((props: any, ref) => {
+  let { href, children, ...rest }: any = props;
+  return (
+    <Link href={href}>
+      <a ref={ref as any} {...rest} className="block px-4 py-2 text-sm">
+        {children}
+      </a>
+    </Link>
+  )
+})
 
 function MenuBtnLink({ item }) {
   const { t } = useTranslation();
 
   return (
     <Menu as="div" key={item.text} className="relative inline-block text-left">
-      <>
-        <Menu.Button>
-          {t(item.text)}
-        </Menu.Button>
-      </>
+      <Menu.Button>
+        {t(item.text)}
+      </Menu.Button>
       <Transition
         as={Fragment}
         enter="transition ease-out duration-100"
@@ -31,9 +40,11 @@ function MenuBtnLink({ item }) {
               return (
                 <div className="py-1" key={subitem.text}>
                   <Menu.Item>
-                    <Link href={subitem.url}>
-                      <a className="block px-4 py-2 text-sm">{t(subitem.text)}</a>
-                    </Link>
+                    {({ active }) => (
+                      <MyLink href={subitem.url}>
+                        {t(subitem.text)}
+                      </MyLink>
+                    )}
                   </Menu.Item>
                 </div>
               )
@@ -154,7 +165,7 @@ export default function Navigation() {
                                   item.navigation.map((subitem) => {
                                     return (
                                       <Link key={subitem.text} href={subitem.url}>
-                                        <a 
+                                        <a
                                           className="block px-4 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-300"
                                           onClick={() => {
                                             close()
