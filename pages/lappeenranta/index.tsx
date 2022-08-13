@@ -1,9 +1,16 @@
+import TabSchedule from "../../components/lappeenranta/tabschedule";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Lappeeranta() {
+    const { t } = useTranslation();
+
     return (
         <div>
-            <h2>Lappeeranta!</h2>
+            <div>
+                <h2>{t("LAPPEENRANTA")}</h2>
+                <TabSchedule />
+            </div>
         </div>
     )
 };

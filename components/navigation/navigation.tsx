@@ -60,10 +60,6 @@ export default function Navigation() {
 
   const { t } = useTranslation();
 
-  const onClickMenuButton = (e) => {
-    console.log(e);
-  };
-
   return (
     <Popover>
       <div className="relative pt-6 px-4 sm:px-6 lg:px-8">
