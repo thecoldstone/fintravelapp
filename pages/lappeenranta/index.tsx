@@ -8,7 +8,9 @@ export default function Lappeeranta() {
     return (
         <div>
             <div>
-                <h2>{t("LAPPEENRANTA")}</h2>
+                <div className="h-20 bg-gradient-to-r from-sky-500 to-indigo-500 text-white">
+                    <h2 className="font-mono text-3xl pt-5 pl-10">{t("LAPPEENRANTA")}</h2>
+                </div>
                 <TabSchedule />
             </div>
         </div>
