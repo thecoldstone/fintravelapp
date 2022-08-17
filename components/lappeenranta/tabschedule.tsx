@@ -11,7 +11,7 @@ export default function TabSchedule() {
     const { t } = useTranslation();
 
     return (
-        <div className="max-w-8xl px-2 py-16 sm:px-3 md:px-5">
+        <div className="px-2 py-10 sm:px-3 md:px-5">
             <Tab.Group>
                 <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
                     {tabs.map((tab) => (
@@ -33,7 +33,7 @@ export default function TabSchedule() {
                         {
                             tuesdayThursday.map((item) => (
                                 <div key={item.time}>
-                                    <div className="pl-5 pt-4 flex items-center">
+                                    <div className="pl-5 pt-1 flex items-center">
                                         <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
                                         <p className="pl-2 subpixel-antialiased text-base font-mono">{item.time}</p>
                                         <p className="pl-4">{item.text}</p>
@@ -46,7 +46,7 @@ export default function TabSchedule() {
                         {
                             saturday.map((item) => (
                                 <div key={item.time}>
-                                    <div className="pl-5 pt-4 flex items-center">
+                                    <div className="pl-5 pt-1 flex items-center">
                                         <div className="h-2 w-2 bg-blue-500 rounded-full"></div>
                                         <p className="pl-2 subpixel-antialiased text-base font-mono">{item.time}</p>
                                         <p className="pl-4">{item.text}</p>
