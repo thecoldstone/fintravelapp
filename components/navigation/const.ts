@@ -7,8 +7,8 @@ const navigation = [
             { text: "HELSINKI", url: "helsinki" }
         ]
     },
-    { text: "SCHEDULE", url: "schedule" },
-    { text: "CONTACTS", url: "contacts" }
+    { text: "SCHEDULE", url: "/" },
+    { text: "CONTACTS", url: "/" }
 ];
 
 export default navigation;

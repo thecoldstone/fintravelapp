@@ -10,7 +10,7 @@ export default function Lappeeranta() {
             <div className="h-20 bg-gradient-to-r from-sky-500 to-indigo-500 text-white">
                 <h2 className="font-mono text-3xl pt-5 pl-10">| {t("LAPPEENRANTA")}</h2>
             </div>
-            <div className="">
+            <div>
                 <div className="flex flex-col items-center mt-10">
                     <div className="max-w-6xl px-5">
                         <p className="text-left">
