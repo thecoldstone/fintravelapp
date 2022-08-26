@@ -4,7 +4,8 @@ const navigation = [
         text: "LAPPEENRANTA", navigation: [
             { text: "TOURTOLAPPEENRANTA", url: "lappeenranta" },
             { text: "ONEHOURTOUR", url: "onehourtour" },
-            { text: "HELSINKI", url: "helsinki" }
+            { text: "HELSINKI", url: "helsinki" },
+            { text: "RENTBUS", url: "rent" }
         ]
     },
     { text: "SCHEDULE", url: "/" },

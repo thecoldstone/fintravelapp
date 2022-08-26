@@ -1,5 +1,4 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Image from "next/image";
 import Maintenance from "../components/maintenance/maintenance";
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
                         <div className="pt-10 pb-10">
                             <Maintenance />
                             <div>
-                                
                             </div>
                         </div>
                     </div>
