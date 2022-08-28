@@ -7,7 +7,7 @@ export default function Maintenance() {
 
     return (
         <div className="md:text-center lg:text-center flex flex-col text-white">
-            <div className="flex items-center">
+            <div className="flex xs:flex-col md:flex-row items-center">
                 <RiToolsFill size="3em" color="white"/>
                 <h1 className="text-4xl tracking-tight font-extrabold sm:text-5xl">
                     <span>{t("UNDERCONSTRUCTION")}</span>

@@ -21,7 +21,7 @@ function MenuBtnLink({ item }) {
   const { t } = useTranslation();
 
   return (
-    <Menu as="div" key={item.text} className="relative inline-block text-left">
+    <Menu as="div" key={item.text} className="relative inline-block text-left z-10">
       <Menu.Button>
         {t(item.text)}
       </Menu.Button>

@@ -6,7 +6,7 @@ export default function Home() {
         <main>
             <div className="mx-auto">
                 <div className="
-                bg-gray-100 bg-bg_home bg-no-repeat bg-center bg-cover bg-blend-multiply">
+                bg-gray-100 bg-bg_home bg-no-repeat bg-center bg-cover bg-blend-multiply drop-shadow-md">
                     <div className="flex justify-center filter-none">
                         <div className="pt-10 pb-10">
                             <Maintenance />
@@ -17,7 +17,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="mx-auto">
-                <div className="bg-gray-200">
+                <div className="bg-gray-900">
                     <div className="flex justify-center">
                         <div className="pt-10">
                         </div>
