@@ -6,8 +6,8 @@ export default function Home() {
         <main>
             <div className="mx-auto">
                 <div className="
-                bg-gray-100">
-                    <div className="flex justify-center">
+                bg-gray-100 bg-bg_home bg-no-repeat bg-center bg-cover bg-blend-multiply">
+                    <div className="flex justify-center filter-none">
                         <div className="pt-10 pb-10">
                             <Maintenance />
                             <div>
