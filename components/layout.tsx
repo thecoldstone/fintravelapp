@@ -46,12 +46,17 @@ export default function Layout({ children }) {
                         <p>Copyright fin.travel 2022</p>
                     </div>
                     <div className="pt-10">
-                        <div className="space-x-10">
+                        <div className="xs:hidden sm:flex space-x-10">
                             <a href={`tel:+7 (812) 777 70 05`}>+7 (812) 777 70 05</a>
                             <a href={`tel:+7 (921) 764 76 56`}>+7 (921) 764 76 56</a>
                             <a href={`tel:+7 (911) 998 73 63`}>+7 (911) 998 73 63</a>
                         </div>
-                        <div className="flex justify-center items-center space-x-10 pt-5">
+                        <div className="xs:flex-col sm:hidden justify-center space-y-2">
+                            <a className="flex justify-center" href={`tel:+7 (812) 777 70 05`}>+7 (812) 777 70 05</a>
+                            <a className="flex justify-center" href={`tel:+7 (921) 764 76 56`}>+7 (921) 764 76 56</a>
+                            <a className="flex justify-center" href={`tel:+7 (911) 998 73 63`}>+7 (911) 998 73 63</a>
+                        </div>
+                        <div className="xs:hidden sm:flex justify-center items-center space-x-10 pt-5">
                             <div className="flex">
                                 <SocialIcon url="https://t.me/fintravel" network="telegram" label="@fintravel" style={{ height: 25, width: 25 }} />
                                 <p className="pl-2">@fintravel</p>
@@ -61,6 +66,20 @@ export default function Layout({ children }) {
                                 <p className="pl-2">fin.travel</p>
                             </div>
                             <div className="flex">
+                                <SocialIcon url="https://www.facebook.com/fin.travel" network="facebook" label="fin.travel" style={{ height: 25, width: 25 }} />
+                                <p className="pl-2">fin.travel</p>
+                            </div>
+                        </div>
+                        <div className="xs:flex-col sm:hidden space-y-2 pt-5">
+                            <div className="flex justify-center">
+                                <SocialIcon url="https://t.me/fintravel" network="telegram" label="@fintravel" style={{ height: 25, width: 25 }} />
+                                <p className="pl-2">@fintravel</p>
+                            </div>
+                            <div className="flex justify-center">
+                                <SocialIcon url="https://vk.com/fin.travel" network="vk" label="@fintravel" style={{ height: 25, width: 25 }} />
+                                <p className="pl-2">fin.travel</p>
+                            </div>
+                            <div className="flex justify-center">
                                 <SocialIcon url="https://www.facebook.com/fin.travel" network="facebook" label="fin.travel" style={{ height: 25, width: 25 }} />
                                 <p className="pl-2">fin.travel</p>
                             </div>

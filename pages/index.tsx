@@ -12,12 +12,12 @@ export default function Home() {
                         <div className="p-28 md:px-24 xs:px-10">
                             <div className="text-white">
                                 <h2 className="font-thin text-5xl">Поездки в Финляндию</h2>
-                                <h2 className="flex font-thin text-3xl py-5">Всего от <p className="mx-1.5 font-medium text-amber-400">2000 тысяч</p> рублей</h2>
+                                <h2 className="font-thin text-3xl py-5">Всего от <b className="font-medium text-amber-400">2000 тысяч</b> рублей</h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="md:hidden lg:inline absolute top-5 right-20">
+                <div className="xs:hidden lg:inline absolute top-5 right-20">
                     <div className="flex">
                         <div className="bg-blue-900 rounded mt-60 drop-shadow-lg text-white">
                             <div className="flex-col my-5 mx-10 font-light">
@@ -56,9 +56,9 @@ export default function Home() {
                 <div className="md:block lg:hidden">
                     <div className="flex">
                         <div className="bg-blue-900 w-full drop-shadow-lg text-white">
-                            <div className="flex-col py-10 my-5 mx-24 text-3xl font-light">
+                            <div className="flex-col py-10 my-5 mx-10 text-3xl font-light">
                                 <div>
-                                    <h1 className="flex">Поездки <p className="mx-1.5 font-bold">4 раза</p>  в неделю</h1>
+                                    <h1>Поездки <b className="font-bold">4 раза</b> в неделю</h1>
                                 </div>
                                 <div className="pt-5">
                                     <p className="text-2xl">Билеты вы сможете приобрести с помощию <br /> наших партнеров </p>
