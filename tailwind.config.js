@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'bg_home': "url(https://live.staticflickr.com/65535/52313647932_f764b8ef57_o.jpg)"
+        'bg_home': "url(https://lappeenranta.kuvat.fi/kuvat/Matkailu/Kaupunginlahti%2C%20auringonlasku%20hein%C3%A4kuussa.jpg?img=full)"
       }
     },
     screens: {

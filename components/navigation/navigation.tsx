@@ -62,8 +62,8 @@ export default function Navigation() {
 
   return (
     <Popover>
-      <div className="relative pt-3 sm:pb-3 px-4 sm:px-6 lg:px-8">
-        <nav className="relative flex items-center justify-between sm:h-10 lg:justify-center">
+      <div className="relative pt-3 sm:pb-3 sm:px-6 px-4 xs:px-4">
+        <nav className="relative flex items-center sm:h-10 pl-20">
           <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
             <div className="flex items-center justify-between w-full md:w-auto">
               <Link href="/">
@@ -83,7 +83,7 @@ export default function Navigation() {
               </div>
             </div>
           </div>
-          <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+          <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8 lg:pl-10 font-light text-gray-500 hover:text-gray-900">
             {
               navigation.map((item) => {
                 return item.navigation
@@ -92,7 +92,7 @@ export default function Navigation() {
                   )
                   : (
                     <Link key={item.text} href={item.url}>
-                      <a className="font-medium text-gray-500 hover:text-gray-900">
+                      <a>
                         {t(item.text)}
                       </a>
                     </Link>

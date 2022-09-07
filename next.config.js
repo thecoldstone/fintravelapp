@@ -3,6 +3,6 @@ const { i18n } = require("./next-i18next.config");
 module.exports = {
     i18n,
     images: {
-        domains: ['live.staticflickr.com']
+        domains: ['live.staticflickr.com', 'lappeenranta.kuvat.fi']
     }
 };
