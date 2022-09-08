@@ -12,7 +12,7 @@ export default function Home() {
                         <div className="p-28 md:px-24 xs:px-10">
                             <div className="text-white">
                                 <h2 className="font-thin text-5xl">Поездки в Финляндию</h2>
-                                <h2 className="font-thin text-3xl py-5">Всего от <b className="font-medium text-amber-400">2000 тысяч</b> рублей</h2>
+                                <h2 className="font-thin text-3xl py-5">Всего от <b className="font-medium text-amber-400">1500 тысяч</b> рублей</h2>
                             </div>
                         </div>
                     </div>
