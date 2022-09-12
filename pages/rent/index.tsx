@@ -18,28 +18,15 @@ export default function RentBus() {
                     <h2 className="text-xl font-semibold">{t("DESCRIPTION")}</h2>
                     <div className="pt-10">
                         <p>Финляндия на час - 20 000 рублей (два приграничных магазина и обратно)
-Тур в Лаппеенранту 25 000 (туда и обратно)
-Тур в Лаппеенранту 30 000 (если в одну сторону) 
-Тур в Хельсинки 40 000  (в одну сторону) 
+                            Тур в Лаппеенранту 25 000 (туда и обратно)
+                            Тур в Лаппеенранту 30 000 (если в одну сторону)
+                            Тур в Хельсинки 40 000  (в одну сторону)
 
-За эти деньги Вы арендуете 17-ти местный автобус с опытным водителем и всеми разрешениями.  
-Много багажа (чемоданы и т.д.)? Есть прицеп. Он входит в стоимость аренды. 
-Телефон +79013117363 
-Telegram @fintravel
+                            За эти деньги Вы арендуете 17-ти местный автобус с опытным водителем и всеми разрешениями.
+                            Много багажа (чемоданы и т.д.)? Есть прицеп. Он входит в стоимость аренды.
+                            Телефон +79013117363
+                            Telegram @fintravel
                         </p>
-                    </div>
-                </div>
-                <div className="bg-gray-200 py-10 px-10">
-                    <h2 className="text-xl font-semibold text-blue-600">{t("SCHEDULE")}</h2>
-                    <div className="pt-10">
-                        <p>{t("UNDERCONSTRUCTION")}</p>
-                        <div className="pt-5">
-                            <div className="h-2 bg-gray-400 w-40 max-w-5"></div>
-                            <div className="h-2 bg-gray-300 w-20 mt-1"></div>
-                            <div className="h-2 bg-gray-400 w-24 mt-1"></div>
-                            <div className="h-2 bg-gray-300 w-10 mt-1"></div>
-                            <div className="h-2 bg-gray-400 w-40 max-w-5 mt-1"></div>
-                        </div>
                     </div>
                 </div>
             </div>
