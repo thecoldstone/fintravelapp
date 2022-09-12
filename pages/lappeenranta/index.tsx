@@ -1,4 +1,5 @@
 import TabSchedule from "../../components/lappeenranta/tabschedule";
+import { CgScrollV } from "react-icons/cg";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
@@ -6,29 +7,53 @@ export default function Lappeeranta() {
     const { t } = useTranslation();
 
     return (
-        <div>
-            <div className="h-20 bg-gradient-to-r from-sky-500 to-indigo-500 text-white">
-                <h2 className="font-mono text-3xl pt-5 pl-10">| {t("LAPPEENRANTA")}</h2>
+        <div className="mx-auto relative">
+            <div className="bg-gray-300 bg-bg_lappeenranta bg-no-repeat bg-cover bg-center bg-blend-multiply text-white">
+                <h2 className="font-mono text-4xl py-16 md:pl-10">| {t("LAPPEENRANTA")}</h2>
             </div>
-            <div>
-                <div className="flex flex-col items-center mt-10">
-                    <div className="max-w-6xl px-5">
-                        <p className="text-left">
-                            Красивейшие виды Южной Финляндии и отличный шопинг.
-                            Много гостиниц, кафе и ресторанов! А круиз по озеру Сайма не оставит Вас равнодушными. Возможно поехать с нами в одну сторону.</p>
-                        <br />
-
+            <div className="xs:block md:hidden min-h-60 w-full bg-gradient-to-b from-black via-neutral-800 to-neutral-800 pb-2">
+                <div className="flex justify-center text-white opacity-30">
+                    {/* <p>{t("SCROLLDOWN")}</p> */}
+                </div>
+            </div>
+            <div className="bg-neutral-800 py-10 md:px-24 xs:px-10 text-white xs:overflow-y-auto md:overflow-hidden xs:h-60 md:h-max">
+                <div className="grid md:grid-cols-3 sm:grid-cols-1 justify-center gap-4">
+                    <div className="pb-5 col-span-4">
+                        <h2 className="text-3xl text-blue-500">{t("DESCRIPTION")}</h2>
+                    </div>
+                    <div className="xs:col-span-4 md:col-span-1">
                         <p>
-                            Благодаря близкому расположению от Санкт-Петербурга, город Лаппеенранта (Финляндия) привлекает туристов из России. Здесь каждый найдёт для себя что-то интересное. Lappeenranta - город небольшой, и всё расположено в шаговой доступности. Огромное количество удобно расположенных магазинов не оставят Вас без покупок. И только на микроавтобусах нашей компании, совершая тур в Лаппеенранту, Вы не будете держать покупки на коленях всю дорогу, а удобно разместите их в прицепе. Мы не возим оптовиков, и прицеп берём только ради удобства пассажиров. Финскую границу проходим по автобусной полосе, которая, в отличии от легковой полосы, всегда свободна. Поездка на микроавтобусе в Лаппеенранту (Финляндия) от компании Fin.travel - Ваш правильный выбор. У нас оптимально проработанный маршрут СПб - Лаппеенранта (Финляндия).  В центре города 4 часа свободного времени. Посещаем все необходимые магазины.  Микроавтобусами управляют опытные водители. Можете быть уверены, что в Лаппеенранту на шоппинг Вы попадете быстро и комфортно. Поездки в Финляндию осуществляются как в одну, так и в две стороны.
-
-                            По пути следования посадка в любом удобном для Вас месте.  Есть возможность раннего бронирования места в автобусе.
-
-                            Стоимость Зелёной карты для легкового автомобиля уже .... в месяц! Ещё и рулить надо. Зачем это Вам? Приглашаем в наш микроавтобус.
+                            Благодаря близкому расположению от Санкт-Петербурга, город Лаппеенранта (Финляндия) привлекает туристов из России. Здесь каждый найдёт для себя что-то интересное. Lappeenranta - город небольшой, и всё расположено в шаговой доступности. Огромное количество удобно расположенных магазинов не оставят Вас без покупок. И только на микроавтобусах нашей компании, совершая тур в Лаппеенранту, Вы не будете держать покупки на коленях всю
+                            дорогу, а удобно разместите их в прицепе. Мы не возим оптовиков, и прицеп берём только ради удобства пассажиров.
                         </p>
-
+                    </div>
+                    <div className="xs:col-span-4 md:col-span-1">
+                        <p>
+                            У нас оптимально проработанный маршрут СПб - Лаппеенранта
+                            (Финляндия). В центре города 4 часа свободного времени.
+                            Посещаем все необходимые магазины. Микроавтобусами
+                            управляют опытные водители. Можете быть уверены, что в
+                            Лаппеенранту на шоппинг Вы попадете быстро и комфортно.
+                            Поездки в Финляндию осуществляются как в одну, так и в две
+                            стороны. По пути следования посадка в любом удобном для Вас
+                            месте. Есть возможность раннего бронирования места в автобусе.
+                        </p>
+                    </div>
+                    <div className="xs:col-span-4 md:col-span-1">
+                        <p>
+                            Финскую границу проходим по автобусной полосе, которая, в отличии от легковой полосы, всегда свободна. Поездка на микроавтобусе в Лаппеенранту (Финляндия) от компании Fin.travel - Ваш правильный выбор.
+                        </p>
                     </div>
                 </div>
-                <div className="flex flex-col items-center bg-gray-100 mt-5">
+            </div>
+            <div className="xs:block md:hidden min-h-60 w-full bg-gradient-to-t from-black via-neutral-800 to-neutral-800 pb-2">
+                <div className="flex justify-center items-center text-white opacity-30">
+                    <CgScrollV />
+                    <p>{t("SCROLLDOWN")}</p>
+                </div>
+            </div>
+            <div>
+                <div className="flex flex-col items-center bg-gray-100">
                     <div className="max-w-8xl">
                         <TabSchedule />
                     </div>

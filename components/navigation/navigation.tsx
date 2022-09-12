@@ -63,7 +63,7 @@ export default function Navigation() {
   return (
     <Popover>
       <div className="relative pt-3 sm:pb-3 sm:px-6 px-4 xs:px-4">
-        <nav className="relative flex items-center sm:h-10 pl-20">
+        <nav className="relative flex items-center sm:h-10 md:pl-20">
           <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
             <div className="flex items-center justify-between w-full md:w-auto">
               <Link href="/">
