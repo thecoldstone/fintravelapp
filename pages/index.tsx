@@ -1,21 +1,27 @@
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
+
+    const {t} = useTranslation();
+
     return (
         <main>
             <div className="mx-auto relative">
                 <div className="
                 bg-gray-400 bg-bg_home bg-no-repeat bg-center bg-cover bg-blend-multiply drop-shadow-md">
                     <div className="flex">
-                        <div className="p-28 md:px-24 xs:px-10">
+                        <div className="md:p-28 xs:px-10 py-20">
                             <div className="text-white">
-                                <h2 className="font-thin text-5xl">Поездки в Финляндию</h2>
-                                <h2 className="font-thin text-3xl py-5">Всего от <b className="font-medium text-amber-400">1500 тысяч</b> рублей</h2>
+                                <h2 className="font-thin text-5xl">{t("TRAVELTOFINLAND")}</h2>
+                                <h2 className="font-thin text-3xl py-5">{t("ONLYFOR")} <b className="font-medium text-amber-400">{t("60EURO")}</b></h2>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="">
+                    
                 </div>
                 <div className="xs:hidden lg:inline absolute top-5 right-20">
                     <div className="flex">
@@ -31,6 +37,7 @@ export default function Home() {
                                     <div>
                                         <a target="_blank" href="https://unitiki.com/buses/sankt-peterburg/lappeenranta/search/UgEEDVANUVI=">
                                             <Image
+                                                alt="unitiki"
                                                 className="fill-blue-500"
                                                 src="/unitiki.svg"
                                                 width={100}
@@ -41,6 +48,7 @@ export default function Home() {
                                     <div>
                                         <a target="_blank" href="https://ros-bilet.ru/reys/sankt-peterburg/lappeenranta-9957984">
                                             <Image
+                                                alt="rosbilet"
                                                 className="fill-blue-500"
                                                 src="/rosbilet.png"
                                                 width={200}
@@ -67,6 +75,7 @@ export default function Home() {
                                     <div>
                                         <a target="_blank" href="https://unitiki.com/buses/sankt-peterburg/lappeenranta/search/UgEEDVANUVI=">
                                             <Image
+                                                alt="unitiki"
                                                 className="fill-blue-500"
                                                 src="/unitiki.svg"
                                                 width={100}
@@ -77,6 +86,7 @@ export default function Home() {
                                     <div>
                                         <a target="_blank" href="https://ros-bilet.ru/reys/sankt-peterburg/lappeenranta-9957984">
                                             <Image
+                                                alt="rosbilet"
                                                 className="fill-blue-500"
                                                 src="/rosbilet.png"
                                                 width={200}
@@ -90,7 +100,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="flex justify-center py-20">
-                    <p>Сайт разрабатывается...</p>
+                    <p>{t("UNDERCONSTRUCTION")}</p>
                 </div>
             </div>
         </main>

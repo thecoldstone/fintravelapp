@@ -4,10 +4,12 @@ import { SocialIcon } from "react-social-icons";
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "./navigation/navigation";
+import { useTranslation } from "next-i18next";
 
 export default function Layout({ children }) {
 
     const [maintenanceShown, setMaintenanceShown] = React.useState(true);
+    const { t }  = useTranslation();
 
     return (
         <div className="">
@@ -19,7 +21,7 @@ export default function Layout({ children }) {
                             <div className="flex py-4 bg-blue-100 dark:bg-blue-200 justify-center">
                                 <div className="flex items-center text-sm font-medium text-blue-700">
                                     <RiToolsFill size="2em" color="blue" />
-                                    <p>Сайт в разработке</p>
+                                    <p>{t("UNDERCONSTRUCTION")}</p>
                                 </div>
                                 <button type="button" className="ml-1 pt-1.5 opacity-30 hover:opacity-100 bg-blue-500 text-blue-500 rounded-lg focus:ring-2 focus:ring-blue-400 p-1.5 hover:bg-blue-200 inline-flex h-8 w-8 dark:bg-blue-200 dark:text-blue-600 dark:hover:bg-blue-300" onClick={(e) => { setMaintenanceShown(false) }}>
                                     <span className="sr-only">Close</span>
@@ -34,13 +36,12 @@ export default function Layout({ children }) {
             <footer className="bottom-0 w-full bg-gray-50 mt-10 py-10 z-20 font-light text-gray-400">
                 <div className="flex flex-col justify-center items-center">
                     <Link href="/">
-                        <a>
                             <Image
+                                alt="logo"
                                 src="/fintravel-logo.svg"
                                 width={100}
                                 height={80}
                             />
-                        </a>
                     </Link>
                     <div>
                         <p>Copyright fin.travel 2022</p>

@@ -5,6 +5,7 @@ const navigation = [
     },
     {
         text: "SCHEDULE", navigation: [
+            { text: "RYANAIRFLIGHT", url: "ryanairflight" },
             { text: "TOURTOLAPPEENRANTA", url: "lappeenranta" },
             { text: "ONEHOURTOUR", url: "onehourtour" },
             { text: "HELSINKI", url: "helsinki" },

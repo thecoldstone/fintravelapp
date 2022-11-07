@@ -9,10 +9,8 @@ import navigation from "./const";
 const MyLink = forwardRef((props: any, ref) => {
   let { href, children, ...rest }: any = props;
   return (
-    <Link href={href}>
-      <a ref={ref as any} {...rest} className="block px-4 py-2 text-sm">
+    <Link href={href} {...rest} className="block px-4 py-2 text-sm">
         {children}
-      </a>
     </Link>
   )
 })
@@ -62,18 +60,17 @@ export default function Navigation() {
 
   return (
     <Popover>
-      <div className="relative pt-3 sm:pb-3 sm:px-6 px-4 xs:px-4">
+      <div className="relative py-3 px-4">
         <nav className="relative flex items-center sm:h-10 md:pl-20">
           <div className="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
             <div className="flex items-center justify-between w-full md:w-auto">
               <Link href="/">
-                <a>
                   <Image
+                    alt="logo"
                     src="/fintravel-logo.svg"
                     width={100}
                     height={80}
                   />
-                </a>
               </Link>
               <div className="-mr-2 flex items-center md:hidden">
                 <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center jsutify-center text-gray-400">
@@ -92,9 +89,7 @@ export default function Navigation() {
                   )
                   : (
                     <Link key={item.text} href={item.url}>
-                      <a>
                         {t(item.text)}
-                      </a>
                     </Link>
                   )
               })
@@ -121,13 +116,12 @@ export default function Navigation() {
               <div className="px-5 pt-4 flex items-center justify-between">
                 <div>
                   <Link href="/">
-                    <a>
                       <Image
+                        alt="logo"
                         src="/fintravel-logo.svg"
                         width={100}
                         height={80}
                       />
-                    </a>
                   </Link>
                 </div>
                 <div className="-mr-2">
@@ -161,12 +155,12 @@ export default function Navigation() {
                                   item.navigation.map((subitem) => {
                                     return (
                                       <Link key={subitem.text} href={subitem.url}>
-                                        <a
+                                        <div
                                           className="block px-4 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-300"
                                           onClick={() => {
                                             close()
                                           }}
-                                        >{t(subitem.text)}</a>
+                                        >{t(subitem.text)}</div>
                                       </Link>
                                     )
                                   })
@@ -178,14 +172,14 @@ export default function Navigation() {
                       )
                       : (
                         <Link key={item.text} href={item.url}>
-                          <a
+                          <div
                             className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                             onClick={() => {
                               close()
                             }}
                           >
                             {t(item.text)}
-                          </a>
+                          </div>
                         </Link>
                       )
                   }
