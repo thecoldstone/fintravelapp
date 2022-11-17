@@ -1,10 +1,16 @@
-import { Disclosure, Popover, Transition, Menu } from "@headlessui/react";
+import { Disclosure, Popover, Transition, Menu, Combobox } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { forwardRef, Fragment } from "react";
 import Link from "next/link";
-import navigation from "./const";
+import navigation  from "./const";
+
+// const lang = [
+//   { id: 1, text: "Ru" },
+//   { id: 2, text: "En" },
+//   { id: 3, text: "It" }
+// ];
 
 const MyLink = forwardRef((props: any, ref) => {
   let { href, children, ...rest }: any = props;
@@ -95,6 +101,9 @@ export default function Navigation() {
               })
             }
           </div>
+          {/* <div>
+            <Combobox></Combobox>
+          </div> */}
         </nav>
       </div>
 
