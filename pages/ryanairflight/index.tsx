@@ -7,7 +7,9 @@ export default function Page() {
     return (
         <div className="mx-auto relative">
             <div className="bg-gray-300 bg-bg_lappeenranta bg-no-repeat bg-cover bg-center bg-blend-multiply text-white">
-                <h2 className="font-mono text-4xl py-16 md:pl-10">| {t("RYANAIRFLIGHT")}</h2>
+                <div className="md:container mx-auto">
+                    <h2 className="font-mono text-4xl py-16">| {t("RYANAIRFLIGHT")}</h2>
+                </div>
             </div>
             <div className="md:container mx-auto xs:px-5 md:px-10">
                 <div className="grid lg:grid-cols-7 md:grid-cols-1 xs:grid-cols-1 lg:gap-10 md:gap-2 xs:gap-y-5 pt-10">

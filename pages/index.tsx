@@ -15,7 +15,6 @@ export default function Home() {
                         <div className="md:p-28 xs:px-10 py-20">
                             <div className="text-white">
                                 <h2 className="font-thin text-5xl">{t("TRAVELTOFINLAND")}</h2>
-                                <h2 className="font-thin text-3xl py-5">{t("ONLYFOR")} <b className="font-medium text-amber-400">{t("60EURO")}</b></h2>
                             </div>
                         </div>
                     </div>
