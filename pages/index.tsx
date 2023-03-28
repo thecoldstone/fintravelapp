@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Home() {
 
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <main>
@@ -20,7 +20,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="">
-                    
+
                 </div>
                 <div className="xs:hidden lg:inline absolute top-5 right-20">
                     <div className="flex">
@@ -98,8 +98,25 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="flex justify-center py-20">
-                    <p>{t("UNDERCONSTRUCTION")}</p>
+                <div className="md:container mx-auto xs:px-5 md:px-10">
+                    <div className="grid lg:grid-cols-7 md:grid-cols-1 xs:grid-cols-1 lg:gap-10 md:gap-2 xs:gap-y-5 pt-10">
+                        <div className="col-span-1 xs:col-span-2 space-y-3">
+                            <div>
+                                <p>{t("RYANAIR_TEXT_1")}</p>
+                            </div>
+                            <div>
+                                <p>{t("RYANAIR_TEXT_2")}</p>
+                            </div>
+                        </div>
+                        <div className="col-span-2">
+                            <p>{t("RYANAIR_TEXT_3")}</p>
+                        </div>
+
+                        <div className="flex lg:col-span-3">
+                            <iframe className="w-full aspect-video" src="https://youtube.com/embed/foVO55qsXOc" allowFullScreen={true} />
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </main>
