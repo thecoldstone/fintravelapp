@@ -3,7 +3,7 @@ import { RiToolsFill } from "react-icons/ri";
 import { SocialIcon } from "react-social-icons";
 import Image from "next/image";
 import Link from "next/link";
-import Navigation from "./navigation/navigation";
+import Navigation from "../app/navigation";
 import { useTranslation } from "next-i18next";
 
 export default function Layout({ children }) {
