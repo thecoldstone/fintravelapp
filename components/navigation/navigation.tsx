@@ -87,19 +87,6 @@ export default function Navigation() {
             </div>
           </div>
           <div className="hidden md:block md:ml-10 md:pr-4 md:space-x-8 lg:pl-10 font-light text-gray-500 hover:text-gray-900">
-            {
-              navigation.map((item) => {
-                return item.navigation
-                  ? (
-                    <MenuBtnLink item={item} key={item.text.toLowerCase()} />
-                  )
-                  : (
-                    <Link key={item.text} href={item.url}>
-                        {t(item.text)}
-                    </Link>
-                  )
-              })
-            }
           </div>
           {/* <div>
             <Combobox></Combobox>
@@ -141,58 +128,6 @@ export default function Navigation() {
                 </div>
               </div>
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {
-                  navigation.map((item) => {
-                    return item.navigation
-                      ? (
-                        // [TODO] Needs to be done as accordion
-                        <Disclosure>
-                          <Disclosure.Button className="py-2 px-3">
-                            {t(item.text)}
-                          </Disclosure.Button>
-                          <Transition
-                            enter="transition durtation-100 ease-out"
-                            enterFrom="transform scale-95 opacity-0"
-                            enterTo="transform scale-100 opacity-100"
-                            leave="transition duration-75 ease-out"
-                            leaveFrom="transform scale-100 opacity-100"
-                            leaveTo="transform scale-95 opacity-0"
-                          >
-                            <Disclosure.Panel className="bg-gray-200">
-                              <div>
-                                {
-                                  item.navigation.map((subitem) => {
-                                    return (
-                                      <Link key={subitem.text} href={subitem.url}>
-                                        <div
-                                          className="block px-4 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-300"
-                                          onClick={() => {
-                                            close()
-                                          }}
-                                        >{t(subitem.text)}</div>
-                                      </Link>
-                                    )
-                                  })
-                                }
-                              </div>
-                            </Disclosure.Panel>
-                          </Transition>
-                        </Disclosure>
-                      )
-                      : (
-                        <Link key={item.text} href={item.url}>
-                          <div
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                            onClick={() => {
-                              close()
-                            }}
-                          >
-                            {t(item.text)}
-                          </div>
-                        </Link>
-                      )
-                  }
-                  )}
               </div>
             </div>
           )}

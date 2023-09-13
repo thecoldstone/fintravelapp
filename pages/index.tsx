@@ -117,7 +117,7 @@ export default function Home() {
                                 <div>
                                     <p className="font-medium p-2 bg-zinc-100 rounded">Воскресенье</p>
                                     <div className="flex-col space-y-2 mt-2">
-                                        <p><span className="font-medium">14:00</span> - выезд из Питера</p>
+                                        <p><span className="font-medium">13:30</span> - выезд из Питера</p>
                                         <p><span className="font-medium">21:20</span> - выезд обратно <span className="italic">(по прибытию самолета)</span></p>
                                     </div>
                                 </div>
