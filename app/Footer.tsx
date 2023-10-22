@@ -1,23 +1,10 @@
-import React from "react";
-import { RiToolsFill } from "react-icons/ri";
-import { SocialIcon } from "react-social-icons";
-import Image from "next/image";
 import Link from "next/link";
-import Navigation from "../app/navigation";
-import { useTranslation } from "next-i18next";
+import Image from "next/image";
+import { SocialIcon } from 'react-social-icons';
 
-export default function Layout({ children }) {
-
-    const [maintenanceShown, setMaintenanceShown] = React.useState(true);
-    const { t }  = useTranslation();
-
+export default function Footer() {
     return (
-        <div className="">
-            <div className="relative min-h-full z-10 bg-white lg:max-w lg:w-full xl:max-w">
-                <Navigation />
-                <main>{children}</main>
-            </div>
-            <footer className="bottom-0 w-full bg-gray-50 mt-10 py-10 z-20 font-light text-gray-400">
+        <footer className="bottom-0 w-full bg-zinc-200 mt-10 py-10 z-20 font-light text-zinc-400">
                 <div className="flex flex-col justify-center items-center">
                     <Link href="/">
                             <Image
@@ -28,7 +15,7 @@ export default function Layout({ children }) {
                             />
                     </Link>
                     <div>
-                        <p>Copyright fin.travel 2022</p>
+                        <p>© Copyright fin.travel 2023</p>
                     </div>
                     <div className="pt-10">
                         <div className="xs:hidden sm:flex space-x-10">
@@ -72,6 +59,5 @@ export default function Layout({ children }) {
                     </div>
                 </div>
             </footer>
-        </div>
     )
-}
+};
