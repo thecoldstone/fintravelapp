@@ -1,3 +1,4 @@
+import Footer from "./Footer";
 import "./globals.css";
 import Navigation from "@/app/navigation";
 
@@ -9,8 +10,9 @@ export default function RootLayout({
     return (
         <html>
             <body>
-                <Navigation />
-                {children}
+                    <Navigation />
+                    {children}
+                    <Footer />
             </body>
         </html>
     )
