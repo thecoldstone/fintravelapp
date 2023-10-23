@@ -4,7 +4,7 @@ export default function MainContent() {
             <div className="grid lg:grid-cols-8 md:grid-cols-1 xs:grid-cols-1 lg:gap-10 md:gap-2 xs:gap-y-5 pt-10">
                 <div className="col-span-2 xs:col-span-3 space-y-5">
                     <div>
-                        <p>Ездим в Лаппеенранту по пятницам и воскресеньям к рейсу Ryanair.</p>
+                        <p>Ездим в Лаппеенранту по понедельникам и четвергам к рейсу Ryanair.</p>
                     </div>
                     <div>
                         <p>В Лаппеенранте остановки в любом удобном месте по маршруту (вокзал, центр, Призма). В Лапу сейчас можно ехать только по работе, учёбе, к родителям/детям, с двойным гражданством, транзит, медицина.</p>
